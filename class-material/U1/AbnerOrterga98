@@ -1,0 +1,44 @@
+# Abner Nahum Ortega Medina - AbnerOrterga98
+
+## 20211819 - Optimización de código en sistemas embebidos – Gestión de memoria, eficiencia energética, reducción de latencia
+
+#### La gestión de memoria en sistemas embebidos es fundamental debido a las limitaciones de espacio en estos dispositivos. Un uso ineficiente de la memoria puede llevar a problemas de rendimiento y estabilidad del sistema
+### 15.1 Gestión de Memoria
+La gestión eficiente de la memoria es crucial en sistemas embebidos debido a los recursos limitados de hardware. A continuación se presentan algunas estrategias comunes para manejar la memoria de manera eficiente:
+
+- **Uso de estructuras de datos compactas**: 
+  Para optimizar el uso de memoria, es recomendable utilizar estructuras de datos más simples y de menor tamaño. Por ejemplo, usar enteros de 8 bits en lugar de 32 bits cuando los valores lo permitan, o utilizar arreglos de longitud fija si los datos no cambian de tamaño dinámicamente.
+
+- **Asignación estática frente a dinámica**:
+  En sistemas embebidos, la asignación estática de memoria es preferible a la dinámica, ya que la asignación dinámica de memoria puede llevar a una fragmentación de memoria y a una mayor sobrecarga del sistema. Usar memoria estática asegura que las variables y objetos estén definidos en tiempo de compilación, lo que resulta en un uso más eficiente de la memoria y mayor predictibilidad.
+
+- **Evitar la fragmentación de memoria**:
+  La fragmentación de memoria es un problema común cuando se realiza una asignación dinámica frecuente. Técnicas como *pools de memoria* o *buffers circulares* permiten manejar la memoria de manera más eficiente, reutilizando bloques de memoria preasignados y evitando la fragmentación.
+
+### 15.2 Eficiencia Energética
+La eficiencia energética es un factor clave en sistemas embebidos, especialmente en dispositivos portátiles y de bajo consumo. Algunas estrategias para mejorar la eficiencia energética son:
+
+- **Modos de bajo consumo**:
+  Muchos microcontroladores ofrecen modos de bajo consumo que permiten reducir el uso de energía durante períodos de inactividad. Estos modos pueden incluir el apagado de ciertos módulos del microcontrolador, la reducción de la frecuencia de reloj o la puesta en reposo del procesador. Asegúrate de que el sistema entre en estos modos cuando no se necesite realizar operaciones intensivas.
+
+- **Reducción de operaciones de alto consumo**:
+  Las operaciones complejas como la multiplicación y las operaciones con punto flotante pueden ser intensivas en consumo de energía. Para maximizar la eficiencia energética, usa operaciones de bajo costo como la suma o el desplazamiento de bits, que requieren menos recursos de procesamiento.
+
+- **Optimización de la frecuencia de reloj**:
+  Ajustar la frecuencia de reloj del microcontrolador según la carga de trabajo puede ayudar a reducir el consumo de energía. Si el procesador está inactivo o realizando tareas simples, es posible reducir la frecuencia de reloj para minimizar el consumo de energía sin afectar el rendimiento.
+
+### 15.3 Reducción de Latencia
+Reducir la latencia es crucial en aplicaciones de tiempo real donde la rapidez de respuesta es vital. Aquí algunas estrategias clave para minimizar la latencia:
+
+- **Minimización de interrupciones**:
+  Las interrupciones en los sistemas embebidos a menudo requieren un cambio de contexto, lo que puede aumentar la latencia. Minimiza el uso de interrupciones, o asegúrate de que las interrupciones sean eficientes y no tomen demasiado tiempo en ejecutarse.
+
+- **Optimización de operaciones de comunicación**:
+  En sistemas embebidos que requieren comunicación entre dispositivos (por ejemplo, UART, SPI, I2C), es fundamental optimizar los protocolos para reducir la latencia. Usar técnicas como el uso de buffers o el protocolo adecuado según la aplicación puede reducir considerablemente el tiempo de comunicación.
+
+- **Uso de DMA (Acceso Directo a Memoria)**:
+  El acceso directo a memoria (DMA) es una técnica poderosa para reducir la latencia de las transferencias de datos. Permite que los periféricos transfieran datos directamente a la memoria sin necesidad de intervención del procesador, lo que libera al CPU para realizar otras tareas mientras los datos se transfieren rápidamente.
+
+---
+
+Estas son algunas de las principales estrategias y técnicas para optimizar el código en sistemas embebidos. Al implementar estas prácticas, se asegura que el sistema sea eficiente en cuanto a memoria, energía y tiempo de respuesta, mejorando así su desempeño global en entornos limitados.
